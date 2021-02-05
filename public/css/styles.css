@@ -1,0 +1,348 @@
+/* ---------------------------------
+1. PRIMARY STYLES
+--------------------------------- */
+
+html {
+  font-size: 100%;
+  height: 100%;
+  overflow-x: hidden;
+  margin: 0px;
+  padding: 0px;
+  touch-action: manipulation;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Poppins', serif;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  font-weight: 400;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  word-wrap: break-word;
+  color: #333;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+a,
+ul,
+span,
+li,
+img,
+inpot,
+button {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1.5;
+  font-weight: inherit;
+}
+
+h1,
+h2,
+h3 {
+  font-family: 'Poppins', cursive;
+}
+
+p {
+  line-height: 1.6;
+  font-size: 1.05em;
+  font-weight: 400;
+  color: #777;
+}
+
+h1 {
+  font-size: 4em;
+  line-height: 1;
+}
+h2 {
+  font-size: 2.2em;
+  line-height: 1.1;
+}
+h3 {
+  font-size: 1.8em;
+}
+h4 {
+  font-size: 1.3em;
+}
+h5 {
+  font-size: 1em;
+}
+h6 {
+  font-size: 0.9em;
+  letter-spacing: 1px;
+}
+
+a,
+button {
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  line-height: 1;
+  -webkit-transition: all 0.25s ease-in-out;
+  transition: all 0.25s ease-in-out;
+}
+
+a:focus,
+a:active,
+a:hover,
+button:focus,
+button:active,
+button:hover,
+a b.light-color:hover {
+  text-decoration: none;
+  color: #ffa804;
+}
+
+b {
+  font-weight: 600;
+}
+
+img {
+  width: 100%;
+}
+
+li {
+  list-style: none;
+  display: inline-block;
+}
+
+span {
+  display: inline-block;
+}
+
+button {
+  outline: 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.icon {
+  font-size: 1.1em;
+  display: inline-block;
+  line-height: inherit;
+}
+
+[class^='icon-']:before,
+[class*=' icon-']:before {
+  line-height: inherit;
+}
+
+b.max-bold {
+  font-weight: 700;
+}
+
+/* ---------------------------------
+2. COMMONS FOR PAGE DESIGN
+--------------------------------- */
+
+.section {
+  padding: 100px 0 50px;
+}
+
+.section .heading {
+  margin-bottom: 60px;
+}
+
+.section .heading:before {
+  content: '';
+  height: 10px;
+  width: 50px;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  display: block;
+}
+
+.margin-t-10 {
+  margin-top: 10px;
+}
+
+.margin-b-30 {
+  margin-bottom: 30px;
+}
+.margin-b-50 {
+  margin-bottom: 50px;
+}
+
+.margin-tb-30 {
+  margin-top: 30px;
+  margin-bottom: 30px;
+}
+
+.font-yellow {
+  color: #88343f;
+  margin-top: 0.5rem;
+}
+
+.font-semi-white {
+  color: #ddd;
+}
+
+.font-lite-black {
+  color: #999;
+}
+
+/* ---------------------------------
+3. HEADER
+--------------------------------- */
+
+header {
+  position: absolute;
+  top: 0px;
+  left: 0;
+  right: 0;
+  background: none !important;
+}
+
+header .heading-wrapper {
+  border-radius: 5px;
+  padding: 30px 40px 20px;
+  background: #ffad01;
+  color: #fff;
+}
+
+header .info {
+  margin-bottom: 10px;
+}
+
+header .info .icon {
+  float: left;
+  font-size: 30px;
+}
+
+header .info .right-area {
+  margin-left: 45px;
+}
+
+header .downlad-btn {
+  padding: 10px 25px;
+  border-radius: 4px;
+  float: right;
+  margin-top: 30px;
+  box-shadow: inset 0 0px 4px rgba(0, 0, 0, 0.3);
+  color: #fff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.get-cv {
+	margin-left: 10px;
+	background: rgb(131 35 160 / 71%);
+}
+
+.hire-now {
+	background: rgb(35 49 160 / 80%);
+}
+
+header .downlad-btn:hover {
+  -webkit-transform: translateY(-4px);
+  transform: translateY(-4px);
+}
+
+/* ---------------------------------
+4. INTRO SECTION
+--------------------------------- */
+
+.intro-section {
+  padding-top: 100px;
+  z-index: 1;
+}
+
+.App {
+  background-color: #2a3267;
+}
+
+.intro-section:before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, 0.2);
+}
+
+.intro-section:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 150px;
+  z-index: -1;
+  background: #fff;
+}
+
+.intro {
+  padding: 1rem 20px;
+  margin-top: 120px;
+  text-align: center;
+  background: #fff;
+  border-radius: 0.5rem;
+}
+
+.intro .profile-img {
+  height: 200px;
+  width: 200px;
+  border-radius: 100px;
+  margin: 0 auto;
+  overflow: hidden;
+  position: relative;
+  top: -100px;
+  margin-bottom: -70px;
+}
+
+.intro .information > li {
+  display: block;
+  margin: 5px 0;
+}
+
+.intro .social-icons > li > a {
+  height: 35px;
+  line-height: 35px;
+  width: 35px;
+  border-radius: 20px;
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  margin: 0 5px 5px;
+  background: #887392;
+  color: #fff;
+}
+
+.intro .social-icons > li > a:after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
+  border-radius: 20px;
+  background: #2a3267;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-transform: scale(0);
+  transform: scale(0);
+}
+
+.intro .social-icons > li > a:hover:after {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+}
