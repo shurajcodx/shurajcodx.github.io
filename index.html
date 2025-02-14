@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Shuraj Shampang - Software engineer</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: #011627;
+        color: #ffffff;
+        font-family: 'Fira Code', monospace;
+        min-height: 100vh;
+        position: relative;
+      }
+
+      nav {
+        display: flex;
+        justify-content: space-between;
+        align-items: stretch;
+        border-bottom: 1px solid #1E2D3D;
+        height: 45px;
+        position: fixed;
+        width: 100%;
+        background: #011627;
+        z-index: 1000;
+      }
+
+      .nav-left {
+        display: flex;
+        align-items: stretch;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        gap: 2rem;
+      }
+
+      .nav-left span {
+        color: #607B96;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        white-space: nowrap;
+        margin-left: 1rem;
+      }
+
+      .nav-left ul {
+        display: flex;
+        list-style: none;
+        align-items: stretch;
+      }
+
+      .nav-left ul li {
+        display: flex;
+        align-items: stretch;
+      }
+
+      .nav-left ul li a {
+        text-decoration: none;
+        color: #607B96;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #1E2D3D;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .nav-left ul li a:first-child {
+        border-left: 1px solid #1E2D3D;
+      }
+
+      .nav-left ul li a:hover {
+        color: #fff;
+      }
+
+      .nav-left ul li a.active {
+        color: #fff;
+        border-bottom: 2px solid #FEA55F;
+      }
+
+      .nav-right {
+        display: flex;
+        align-items: stretch;
+        border-left: 1px solid #1E2D3D;
+      }
+
+      .nav-right a {
+        text-decoration: none;
+        color: #607B96;
+        padding: 0 1rem;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #1E2D3D;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .nav-right a:hover {
+        color: #fff;
+      }
+
+      .main-content {
+        padding: 6rem 2rem 6rem 4rem;
+        background: radial-gradient(circle at top right, #1C2B3A 0%, transparent 60%);
+        min-height: calc(100vh - 90px);
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+
+      .code-content {
+        margin-top: 2rem;
+        color: #607B96;
+        overflow-x: auto;
+      }
+
+      .code-line {
+        margin: 0.5rem 0;
+        white-space: nowrap;
+      }
+
+      .const {
+        color: #4D5BCE;
+      }
+
+      .string {
+        color: #E99287;
+        text-decoration: none;
+      }
+
+      .comment {
+        color: #607B96;
+      }
+
+      .intro p {
+        color: #E5E9F0;
+        margin-bottom: 1rem;
+        animation: slideInFromLeft 1s ease-out;
+      }
+
+      .intro h1 {
+        font-size: clamp(2rem, 5vw, 3rem);
+        margin-bottom: 1rem;
+        font-weight: 400;
+        word-break: break-word;
+        animation: slideInFromLeft 1s ease-out 0.5s;
+        animation-fill-mode: both;
+      }
+
+      .intro h2 {
+        color: #4D5BCE;
+        font-weight: 400;
+        font-size: clamp(1.2rem, 3vw, 1.5rem);
+        /* animation: 
+          typewriter 4s ease infinite,
+          blinkCursor 0.75s steps(40) infinite; */
+      }
+
+      footer {
+        position: fixed;
+        bottom: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        background: #011627;
+        border-top: 1px solid #1E2D3D;
+        height: 45px;
+        overflow-x: auto;
+      }
+
+      .footer-left, .footer-right {
+        display: flex;
+        align-items: center;
+        color: #607B96;
+        height: 45px;
+      }
+
+      .footer-left span, .footer-right span {
+        padding: 0 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #1E2D3D;
+        white-space: nowrap;
+        margin-left: 1rem;
+      }
+
+      .social-link {
+        color: #607B96;
+        text-decoration: none;
+        padding: 0 1rem;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        border-right: 1px solid #1E2D3D;
+        transition: color 0.3s ease;
+        white-space: nowrap;
+      }
+
+      .social-link:hover {
+        color: #fff;
+      }
+
+      .footer-right {
+        border-left: 1px solid #1E2D3D;
+      }
+
+      @keyframes slideInFromLeft {
+        0% {
+          transform: translateX(-100%);
+          opacity: 0;
+        }
+        100% {
+          transform: translateX(0);
+          opacity: 1;
+        }
+      }
+
+      @keyframes typewriter {
+        0%, 100% {
+          width: 0;
+        }
+        20%, 80% {
+          width: 100%;
+        }
+      }
+
+      @keyframes blinkCursor {
+        from {
+          border-right-color: #4D5BCE;
+        }
+        to {
+          border-right-color: transparent;
+        }
+      }
+
+      @media (max-width: 768px) {
+        .main-content {
+          padding: 4rem 1rem 4rem 2rem; /* Adjusted left padding for tablets */
+        }
+
+        nav {
+          overflow-x: auto;
+        }
+
+        .nav-left span {
+          min-width: max-content;
+        }
+
+        .footer-left, .footer-right {
+          min-width: max-content;
+        }
+
+        footer {
+          justify-content: flex-start;
+        }
+      }
+
+      @media (max-width: 480px) {
+        .main-content {
+          padding: 4rem 1rem;
+        }
+
+        .intro h1 {
+          font-size: 2rem;
+        }
+
+        .intro h2 {
+          font-size: 1.2rem;
+        }
+
+        .nav-left {
+          gap: 1rem;
+        }
+
+        .nav-left span {
+          padding: 0 0.75rem;
+          margin-left: 0.5rem;
+        }
+
+        .nav-left ul li a,
+        .nav-right a {
+          padding: 0 0.75rem;
+        }
+
+        .social-link,
+        .footer-left span,
+        .footer-right span {
+          padding: 0 0.75rem;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <div class="nav-left">
+        <span>shuraj-shampang</span>
+        <ul>
+          <li><a href="#hello" class="active">_hello</a></li>
+          <li><a href="#about-me">_about-me</a></li>
+          <li><a href="#projects">_projects</a></li>
+        </ul>
+      </div>
+      <div class="nav-right">
+        <a href="#contact-me">_contact-me</a>
+      </div>
+    </nav>
+
+    <div class="main-content">
+      <section class="intro">
+        <p>Hi all. I am</p>
+        <h1>Shuraj Shampang</h1>
+        <h2>> Software engineer</h2>
+      </section>
+
+      <div class="code-content">
+        <div class="code-line">
+          <span class="comment">// my number</span>
+        </div>
+        <div class="code-line">
+          <span class="const">const</span> telephoneNum = <a class="string" href="tel:+9779845320407">"+977 9845320407"</a>;
+        </div>
+        <div class="code-line">
+          <span class="comment">// my e-mail</span>
+        </div>
+        <div class="code-line">
+          <span class="const">const</span> email = <a class="string" href="mailto:shuraj.shampang@gmail.com">"shuraj.shampang@gmail.com"</a>;
+        </div>
+        <div class="code-line">
+          <span class="comment">// you can also see it on my Github page</span>
+        </div>
+        <div class="code-line">
+          <span class="const">const</span> githubLink = <a class="string" href="https://github.com/shurajcodx" target="_blank">"https://github.com/shurajcodx"</a>;
+        </div>
+        <div class="code-line">
+          <span class="comment">// you can check my LinkedIn page</span>
+        </div>
+        <div class="code-line">
+          <span class="const">const</span> linkedinPage = <a class="string" href="https://www.linkedin.com/in/shuraj-shampang-9ab602b" target="_blank">"https://www.linkedin.com/in/shuraj-shampang-9ab602b5"</a>;
+        </div>
+      </div>
+    </div>
+
+    <footer>
+        <div class="footer-left">
+          <span>find me in:</span>
+          <a href="#" class="social-link">Instagram</a>
+          <a href="#" class="social-link">Facebook</a>
+        </div>
+        <div class="footer-right">
+          <span>@shurajcodx</span>
+          <a href="#" class="social-link">GitHub</a>
+        </div>
+      </footer>
+  </body>
+</html>
