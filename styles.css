@@ -172,7 +172,7 @@ footer {
   height: 45px;
 }
 
-.footer-left span, .footer-right span {
+.footer-left span{
   padding: 0 1rem;
   height: 100%;
   display: flex;
@@ -200,6 +200,10 @@ footer {
 
 .footer-right {
   border-left: 1px solid #1E2D3D;
+}
+
+.footer-right span {
+  margin-right: 0.5rem;
 }
 
 @keyframes slideInFromLeft {
