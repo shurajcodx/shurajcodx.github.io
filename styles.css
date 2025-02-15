@@ -7,7 +7,7 @@
 body {
   background: #011627;
   color: #ffffff;
-  font-family: "Fira Code", monospace;
+  font-family: 'Fira Code', monospace;
   min-height: 100vh;
   position: relative;
 }
@@ -16,7 +16,7 @@ nav {
   display: flex;
   justify-content: space-between;
   align-items: stretch;
-  border-bottom: 1px solid #1e2d3d;
+  border-bottom: 1px solid #1E2D3D;
   height: 45px;
   position: fixed;
   width: 100%;
@@ -33,7 +33,7 @@ nav {
 }
 
 .nav-left span {
-  color: #607b96;
+  color: #607B96;
   padding: 0 1rem;
   display: flex;
   align-items: center;
@@ -54,17 +54,17 @@ nav {
 
 .nav-left ul li a {
   text-decoration: none;
-  color: #607b96;
+  color: #607B96;
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  border-right: 1px solid #1e2d3d;
+  border-right: 1px solid #1E2D3D;
   transition: color 0.3s ease;
   white-space: nowrap;
 }
 
 .nav-left ul li a:first-child {
-  border-left: 1px solid #1e2d3d;
+  border-left: 1px solid #1E2D3D;
 }
 
 .nav-left ul li a:hover {
@@ -73,22 +73,22 @@ nav {
 
 .nav-left ul li a.active {
   color: #fff;
-  border-bottom: 2px solid #fea55f;
+  border-bottom: 2px solid #FEA55F;
 }
 
 .nav-right {
   display: flex;
   align-items: stretch;
-  border-left: 1px solid #1e2d3d;
+  border-left: 1px solid #1E2D3D;
 }
 
 .nav-right a {
   text-decoration: none;
-  color: #607b96;
+  color: #607B96;
   padding: 0 1rem;
   display: flex;
   align-items: center;
-  border-right: 1px solid #1e2d3d;
+  border-right: 1px solid #1E2D3D;
   transition: color 0.3s ease;
   white-space: nowrap;
 }
@@ -99,7 +99,7 @@ nav {
 
 .main-content {
   padding: 6rem 2rem 6rem 4rem;
-  background: radial-gradient(circle at top right, #1c2b3a 0%, transparent 60%);
+  background: radial-gradient(circle at top right, #1C2B3A 0%, transparent 60%);
   min-height: calc(100vh - 90px);
   max-width: 1200px;
   margin: 0 auto;
@@ -107,7 +107,7 @@ nav {
 
 .code-content {
   margin-top: 2rem;
-  color: #607b96;
+  color: #607B96;
   overflow-x: auto;
 }
 
@@ -117,20 +117,22 @@ nav {
 }
 
 .const {
-  color: #4d5bce;
+  color: #4D5BCE;
 }
 
 .string {
-  color: #e99287;
+  color: #E99287;
+  text-decoration: none;
 }
 
 .comment {
-  color: #607b96;
+  color: #607B96;
 }
 
 .intro p {
-  color: #e5e9f0;
+  color: #E5E9F0;
   margin-bottom: 1rem;
+  animation: slideInFromLeft 1s ease-out;
 }
 
 .intro h1 {
@@ -138,12 +140,17 @@ nav {
   margin-bottom: 1rem;
   font-weight: 400;
   word-break: break-word;
+  animation: slideInFromLeft 1s ease-out 0.5s;
+  animation-fill-mode: both;
 }
 
 .intro h2 {
-  color: #4d5bce;
+  color: #4D5BCE;
   font-weight: 400;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
+  /* animation: 
+    typewriter 4s ease infinite,
+    blinkCursor 0.75s steps(40) infinite; */
 }
 
 footer {
@@ -153,37 +160,36 @@ footer {
   display: flex;
   justify-content: space-between;
   background: #011627;
-  border-top: 1px solid #1e2d3d;
+  border-top: 1px solid #1E2D3D;
   height: 45px;
   overflow-x: auto;
 }
 
-.footer-left,
-.footer-right {
+.footer-left, .footer-right {
   display: flex;
   align-items: center;
-  color: #607b96;
+  color: #607B96;
   height: 45px;
 }
 
-.footer-left span,
-.footer-right span {
+.footer-left span, .footer-right span {
   padding: 0 1rem;
   height: 100%;
   display: flex;
   align-items: center;
-  border-right: 1px solid #1e2d3d;
+  border-right: 1px solid #1E2D3D;
   white-space: nowrap;
+  margin-left: 1rem;
 }
 
 .social-link {
-  color: #607b96;
+  color: #607B96;
   text-decoration: none;
   padding: 0 1rem;
   height: 100%;
   display: flex;
   align-items: center;
-  border-right: 1px solid #1e2d3d;
+  border-right: 1px solid #1E2D3D;
   transition: color 0.3s ease;
   white-space: nowrap;
 }
@@ -193,12 +199,41 @@ footer {
 }
 
 .footer-right {
-  border-left: 1px solid #1e2d3d;
+  border-left: 1px solid #1E2D3D;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes typewriter {
+  0%, 100% {
+    width: 0;
+  }
+  20%, 80% {
+    width: 100%;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: #4D5BCE;
+  }
+  to {
+    border-right-color: transparent;
+  }
 }
 
 @media (max-width: 768px) {
   .main-content {
-    padding: 4rem 1rem 4rem 2rem;
+    padding: 4rem 1rem 4rem 2rem; /* Adjusted left padding for tablets */
   }
 
   nav {
@@ -209,8 +244,7 @@ footer {
     min-width: max-content;
   }
 
-  .footer-left,
-  .footer-right {
+  .footer-left, .footer-right {
     min-width: max-content;
   }
 
