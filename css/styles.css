@@ -313,9 +313,10 @@ footer {
   animation: fadeInScale 0.5s ease-out 1.5s backwards;
 }
 
-.qr-code {
+.cv-btn-container {
   display: flex;
   margin-top: 20px;
+  text-decoration: none;
 }
 
 .download-cv-btn {
