@@ -316,7 +316,6 @@ footer {
 .cv-btn-container {
   display: flex;
   margin-top: 20px;
-  text-decoration: none;
 }
 
 .download-cv-btn {
@@ -333,6 +332,7 @@ footer {
   width: 100%;
   box-sizing: border-box;
   animation: fadeInScale 0.5s ease-out 2.1s backwards;
+  text-decoration: none;
 }
 
 .download-cv-btn:hover {
