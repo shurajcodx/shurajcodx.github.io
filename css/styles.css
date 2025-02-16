@@ -1,15 +1,5 @@
-:root {
-  --bg-color: #2a2f36; /* Dark background */
-  --text-color: #ffffff; /* White text */
-  --nav-bg: #2a2f36; /* Same as background for consistency */
-  --nav-border: #3e4a59; /* Slightly lighter border color */
-  --link-color: #f39c12; /* Gold link color */
-  --highlight-color: #e74c3c; /* Red highlight color */
-  --secondary-text: #a2b9c1; /* Lighter secondary text */
-  --accent-color: #3498db; /* Blue accent color */
-  --active-border: #f39c12; /* Gold active border */
-  --intro-text: #bdc3c7; /* Light gray for intro text */
-}
+@import "variables.css";
+@import "animations.css";
 
 * {
   margin: 0;
@@ -161,7 +151,13 @@ nav {
   color: var(--highlight-color);
   font-weight: 400;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
-  animation: typewriter 2s ease-out 0.5s;
+  overflow: hidden; /* Ensures text is hidden while animating */
+  white-space: nowrap; /* Prevents text from wrapping */
+  border-right: 2px solid var(--highlight-color); /* Simulates a cursor */
+  width: 0;
+  max-width: 26%; /* Limits the text expansion */
+  display: inline-block; /* Required for width animation */
+  animation: typewriter 2s ease-out forwards, blink 0.7s step-end infinite;
 }
 
 footer {
@@ -216,68 +212,6 @@ footer {
 
 .footer-right span {
   margin-right: 0.5rem;
-}
-
-/* ID Card Animations */
-@keyframes dropIn {
-  0% {
-    transform: translateY(-500px);
-    opacity: 0;
-  }
-  60% {
-    transform: translateY(20px);
-    opacity: 1;
-  }
-  80% {
-    transform: translateY(-10px);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes fadeInScale {
-  0% {
-    opacity: 0;
-    transform: scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1);
-  }
-}
-
-@keyframes swingIn {
-  0% {
-    transform: rotate(-45deg);
-    transform-origin: top center;
-    opacity: 0;
-  }
-  100% {
-    transform: rotate(0);
-    transform-origin: top center;
-    opacity: 1;
-  }
-}
-
-@keyframes slideInStrip {
-  0% {
-    transform: translateY(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 1;
-  }
-}
-
-@keyframes shine {
-  0% {
-    transform: translateX(-100%) rotate(45deg);
-  }
-  100% {
-    transform: translateX(100%) rotate(45deg);
-  }
 }
 
 .id-card-container {
@@ -523,26 +457,4 @@ footer {
   top: -90px;
   left: -50px;
   filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
-}
-
-@keyframes slideInFromLeft {
-  0% {
-    transform: translateX(-100%);
-    opacity: 0;
-  }
-  100% {
-    transform: translateX(0);
-    opacity: 1;
-  }
-}
-
-@keyframes typewriter {
-  0%,
-  100% {
-    width: 0;
-  }
-  20%,
-  80% {
-    width: 100%;
-  }
 }
