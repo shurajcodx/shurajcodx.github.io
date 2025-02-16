@@ -460,3 +460,13 @@ footer {
   left: -50px;
   filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
 }
+
+@media (max-width: 1024px) {
+  .hide-on-tab-mobile {
+    display: none !important;
+  }
+
+  .id-card-container {
+    right: 5rem;
+  }
+}
