@@ -161,6 +161,7 @@ nav {
   color: var(--highlight-color);
   font-weight: 400;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
+  animation: typewriter 2s ease-out 0.5s;
 }
 
 footer {
@@ -217,6 +218,76 @@ footer {
   margin-right: 0.5rem;
 }
 
+/* ID Card Animations */
+@keyframes dropIn {
+  0% {
+    transform: translateY(-500px);
+    opacity: 0;
+  }
+  60% {
+    transform: translateY(20px);
+    opacity: 1;
+  }
+  80% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInScale {
+  0% {
+    opacity: 0;
+    transform: scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes swingIn {
+  0% {
+    transform: rotate(-45deg);
+    transform-origin: top center;
+    opacity: 0;
+  }
+  100% {
+    transform: rotate(0);
+    transform-origin: top center;
+    opacity: 1;
+  }
+}
+
+@keyframes slideInStrip {
+  0% {
+    transform: translateY(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes shine {
+  0% {
+    transform: translateX(-100%) rotate(45deg);
+  }
+  100% {
+    transform: translateX(100%) rotate(45deg);
+  }
+}
+
+.id-card-container {
+  position: fixed;
+  top: 0;
+  right: 10rem;
+  z-index: 9999;
+  animation: swingIn 1.5s ease-out;
+}
+
 .id-card-holder {
   width: 225px;
   padding: 4px;
@@ -224,6 +295,7 @@ footer {
   background-color: #1f1f1f;
   border-radius: 5px;
   position: relative;
+  animation: fadeInScale 0.8s ease-out 1.2s backwards;
 }
 
 .id-card-holder:after {
@@ -254,26 +326,55 @@ footer {
     to right,
     var(--accent-color),
     var(--highlight-color)
-  ); /* Using variables */
+  );
   padding: 10px;
   border-radius: 10px;
   text-align: center;
   box-shadow: 0 0 1.5px 0px #b9b9b9;
   height: 250px;
-
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.id-card:after {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    45deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  transform: rotate(45deg);
+  animation: shine 3s infinite 2.5s;
 }
 
 .id-card h2 {
   font-size: 20px;
   margin: 5px;
+  animation: fadeInScale 0.5s ease-out 1.7s backwards;
 }
 
 .id-card span {
   font-size: 14px;
+  animation: fadeInScale 0.5s ease-out 1.9s backwards;
+}
+
+.header img {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center;
+  animation: fadeInScale 0.5s ease-out 1.5s backwards;
 }
 
 .qr-code {
@@ -294,6 +395,7 @@ footer {
   transition: background-color 0.3s ease, transform 0.2s ease;
   width: 100%;
   box-sizing: border-box;
+  animation: fadeInScale 0.5s ease-out 2.1s backwards;
 }
 
 .download-cv-btn:hover {
@@ -306,29 +408,29 @@ footer {
   transform: translateY(1px);
 }
 
-.header img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
-  object-position: center;
-}
-
 .id-card-hook {
-  background-color: black;
+  background: linear-gradient(to bottom, #000000, #1a1a1a);
   width: 70px;
   margin: 0 auto;
   height: 15px;
   border-radius: 5px 5px 0 0;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+  animation: fadeInScale 0.5s ease-out 1s backwards;
 }
 
 .id-card-hook:after {
   content: "";
-  background-color: rgba(255, 255, 255, 0);
+  background: linear-gradient(
+    to right,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
   width: 47px;
   height: 6px;
   display: block;
-  margin: 0px auto;
+  margin: 0 auto;
   position: relative;
   top: 6px;
   border-radius: 4px;
@@ -337,23 +439,56 @@ footer {
 .id-card-tag-strip {
   width: 45px;
   height: 150px;
-  background-color: #0b485b;
+  background: linear-gradient(
+    90deg,
+    #094557 0%,
+    #0b485b 20%,
+    #0d5b6f 50%,
+    #0b485b 80%,
+    #094557 100%
+  );
   margin: 0 auto;
   border-radius: 5px;
   position: relative;
   top: 9px;
   z-index: 1;
-  border: 1px solid #0b485b;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.3),
+    2px 0 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  overflow: hidden;
+  animation: slideInStrip 1s ease-out 0.8s backwards;
+}
+
+.id-card-tag-strip:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
 }
 
 .id-card-tag-strip:after {
   content: "";
-  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
   width: 100%;
-  height: 1px;
-  background-color: #0b485b;
-  position: relative;
-  top: 10px;
+  height: 100%;
+  background: repeating-linear-gradient(
+    45deg,
+    transparent,
+    transparent 10px,
+    rgba(255, 255, 255, 0.05) 10px,
+    rgba(255, 255, 255, 0.05) 20px
+  );
 }
 
 .id-card-tag {
@@ -363,26 +498,51 @@ footer {
   border-right: 100px solid transparent;
   border-top: 100px solid #0b485b;
   margin: -10px auto -30px auto;
+  position: relative;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  animation: dropIn 1s ease-out 0.5s backwards;
+}
+
+.id-card-tag:before {
+  content: "";
+  position: absolute;
+  top: -95px;
+  left: -92px;
+  width: 184px;
+  height: 90px;
 }
 
 .id-card-tag:after {
   content: "";
-  display: block;
   width: 0;
   height: 0;
   border-left: 50px solid transparent;
   border-right: 50px solid transparent;
   border-top: 100px solid var(--nav-bg);
-  margin: -10px auto -30px auto;
-  position: relative;
+  position: absolute;
   top: -90px;
   left: -50px;
+  filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
 }
 
-.id-card-container {
-  position: fixed;
-  top: 0;
-  right: 10rem;
-  z-index: 9999;
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
 }
 
+@keyframes typewriter {
+  0%,
+  100% {
+    width: 0;
+  }
+  20%,
+  80% {
+    width: 100%;
+  }
+}
