@@ -26,6 +26,8 @@ nav {
   width: 100%;
   background: var(--nav-bg);
   z-index: 1000;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .nav-left {
@@ -42,7 +44,6 @@ nav {
   display: flex;
   align-items: center;
   white-space: nowrap;
-  margin-left: 1rem;
 }
 
 .nav-left ul {
@@ -170,6 +171,8 @@ footer {
   border-top: 1px solid var(--nav-border);
   height: 45px;
   overflow-x: auto;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .footer-left,
@@ -187,7 +190,6 @@ footer {
   align-items: center;
   border-right: 1px solid var(--nav-border);
   white-space: nowrap;
-  margin-left: 1rem;
 }
 
 .social-link {
