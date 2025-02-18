@@ -5,7 +5,7 @@ import { faFileDownload  } from "@fortawesome/free-solid-svg-icons"
 
 const IDCard: FC = () => {
   return (
-    <section className="id-card-container">
+    <section className="id-card-container hide-on-tab-mobile">
       <div className="id-card-tag"></div>
       <div className="id-card-tag-strip"></div>
       <div className="id-card-hook"></div>

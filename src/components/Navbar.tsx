@@ -17,16 +17,18 @@ const Navbar: FC = () => {
           </li>
           <li>
             <NavLink 
-              to="/about" 
-              className={({ isActive }) => isActive ? "active" : ""}
+              to="/about"
+              onClick={(e) => e.preventDefault()}
+              className="cursor-not-allowed"
             >
               _about-me
             </NavLink>
           </li>
           <li>
             <NavLink 
-              to="/projects" 
-              className={({ isActive }) => isActive ? "active" : ""}
+              to="/projects"
+              onClick={(e) => e.preventDefault()}
+              className="cursor-not-allowed"
             >
               _projects
             </NavLink>
@@ -36,7 +38,8 @@ const Navbar: FC = () => {
       <div className="nav-right">
         <NavLink 
           to="/contact" 
-          className={({ isActive }) => isActive ? "active" : ""}
+          onClick={(e) => e.preventDefault()}
+          className="cursor-not-allowed"
         >
           _contact-me
         </NavLink>

@@ -2,7 +2,7 @@ import { FC } from "react";
 
 const CodeContent: FC = () => {
   return (
-    <div className="code-content  hide-on-tab-mobile">
+    <div className="code-content">
       <div className="code-line">
         <span className="comment">// my number</span>
       </div>

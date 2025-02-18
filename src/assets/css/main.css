@@ -152,12 +152,12 @@ nav {
   color: var(--highlight-color);
   font-weight: 400;
   font-size: clamp(1.2rem, 3vw, 1.5rem);
-  overflow: hidden; /* Ensures text is hidden while animating */
-  white-space: nowrap; /* Prevents text from wrapping */
-  border-right: 2px solid var(--highlight-color); /* Simulates a cursor */
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 2px solid var(--highlight-color);
   width: 0;
-  max-width: 26%; /* Limits the text expansion */
-  display: inline-block; /* Required for width animation */
+  max-width: 26%;
+  display: inline-block;
   animation: typewriter 2s ease-out forwards, blink 0.7s step-end infinite;
 }
 
@@ -461,6 +461,10 @@ footer {
   filter: drop-shadow(0 -2px 2px rgba(0, 0, 0, 0.1));
 }
 
+.cursor-not-allowed {
+  cursor: default;
+}
+
 @media (max-width: 1024px) {
   .hide-on-tab-mobile {
     display: none !important;
@@ -468,5 +472,15 @@ footer {
 
   .id-card-container {
     right: 5rem;
+  }
+
+  .main-content {
+    padding: 6rem 1rem;
+  }
+
+  .intro h2 {
+    width: 0;
+    max-width: 100%;
+    min-width: 63%;
   }
 }
