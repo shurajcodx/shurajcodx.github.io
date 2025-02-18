@@ -3,7 +3,7 @@
   "private": true,
   "version": "1.0.0",
   "type": "module",
-  "homepage": "https://surajcodx.github.io/dev-portfolio-template",
+  "homepage": "https://shurajcodx.github.io/dev-portfolio-template/",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
