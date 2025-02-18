@@ -1,9 +1,19 @@
 import { FC } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faFileDownload } from "@fortawesome/free-solid-svg-icons";
+
+import CV from "../assets/surajrai_cv.pdf"; 
 import ProfileImage from "../assets/images/profile.jpeg"
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
-import { faFileDownload  } from "@fortawesome/free-solid-svg-icons"
+
 
 const IDCard: FC = () => {
+  const handleDownload = () => {
+    const link = document.createElement("a");
+    link.href = CV;
+    link.download = "Suraj_Rai_CV.pdf";
+    link.click();
+  };
+
   return (
     <section className="id-card-container">
       <div className="id-card-tag"></div>
@@ -17,13 +27,9 @@ const IDCard: FC = () => {
           <h2>Shuraj Shampang</h2>
           <span>Software Engineer</span>
           <div className="cv-btn-container">
-            <a
-              href="surajrai_cv.pdf"
-              download="Suraj_Rai_CV.pdf"
-              className="download-cv-btn"
-            >
+            <button onClick={handleDownload} className="download-cv-btn">
               <FontAwesomeIcon icon={faFileDownload} /> CV
-            </a>
+            </button>
           </div>
         </div>
       </div>
